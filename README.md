@@ -1,6 +1,6 @@
 # Do It!
 
-#### Video Demo:  Coming Soon<URL HERE>
+#### Video Demo:  <https://youtu.be/npF0jtqTi7I>
 #### Link to Web App : <https://doitfocus.netlify.app/>
 
 #### Description:
