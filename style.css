@@ -128,6 +128,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     font-size: 20px;
     color: white;
     border-radius: 7px;
@@ -270,6 +272,9 @@ a {
 
     #todo li p{
         margin: 0 25px;
-        font-size: 20px;
+        font-size: 16px;
+    }
+    #todo li span {
+        font-size: 16px;
     }
 }
