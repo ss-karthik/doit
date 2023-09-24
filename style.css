@@ -117,7 +117,7 @@ body {
     align-items: stretch;
     justify-content: center;
     gap: 5px;
-    margin: 0 50px;
+    margin: 0 30px;
     cursor: pointer;
     
 }
@@ -215,7 +215,7 @@ body {
     font-size: 40px;
 }
  p {
-    font-size: 25px;
+    font-size: 22px;
  }
 
 a {
@@ -257,7 +257,7 @@ a {
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .audio button {
         font-size: 25px;
     }
@@ -268,6 +268,10 @@ a {
         font-size: 10px;
     }
 
+    #todo {
+        margin: 0px 10px;
+    }
+
     #todo li {
         align-items: flex-start;
         flex-direction: column;
@@ -276,7 +280,7 @@ a {
 
     #todo li p{
         margin: 0 25px;
-        font-size: 16px;   
+        font-size: 20px;   
     }
     #todo li span {
         font-size: 16px;
