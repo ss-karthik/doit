@@ -21,18 +21,53 @@ timeController.addEventListener("click", function (e) {
         document.querySelector(".clock").innerHTML = "15:00";
         stop();
     }
+
+    else if (e.target.className === "custom") {
+        customDuration();
+        
+        stop();
+    }
 })
 
 
-let minutes, seconds, timer;
+let hours, minutes, seconds, timer;
 let display = document.querySelector(".clock");
 let pause = false;
 let started = false;
 
+function customDuration() {
+    document.getElementById("overlay").style.display = "flex";
 
+    let setTime = document.querySelector(".set");
+    let customInput = document.querySelectorAll('.custom-input');
+    customInput.forEach(num => {
+        const input = num.querySelector("input");
+        const up = num.querySelector(".up");
+        const down = num.querySelector(".down");
+
+        up.addEventListener('click', function (){
+            input.stepUp();
+        });
+        down.addEventListener('click', function (){
+            input.stepDown();
+        });
+    });
+    let hourBox = document.getElementById("hours");
+    let minsBox = document.getElementById("mins");
+    setTime.addEventListener('click', () => {
+        let hrs = parseInt(hourBox.value);
+        let mins = parseInt(minsBox.value);
+        duration = (hrs*60*60) + (mins*60);
+        clock = duration;
+        document.querySelector(".clock").innerHTML = `${hrs}:${mins}:00`;
+        document.getElementById("overlay").style.display = "none";
+    })    
+}
 function timecalc() {
-    minutes = Math.floor(clock / 60);
+    hours = Math.floor(clock/3600);
+    minutes = Math.floor((clock-(hours*3600))/ 60);
     seconds = clock % 60;
+    
 
     if (minutes < 10) {
         minutes = "0" + minutes;
@@ -43,8 +78,11 @@ function timecalc() {
     }
 
     clock--;
-
-    display.innerHTML = minutes + ":" + seconds;
+    if(hours == 0){
+        display.innerHTML = minutes + ":" + seconds;
+    } else {
+        display.innerHTML = hours + ":" + minutes + ":" + seconds;
+    }
 
     if (clock < 0) {
         stop();

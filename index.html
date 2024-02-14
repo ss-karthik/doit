@@ -16,12 +16,28 @@
             <button class="pomodoro">Pomodoro</button>
             <button class="shortbr">Short Break</button>
             <button class="longbr">Long Break</button>
-
+            <button class="custom">Custom</button>
         </div>
         <p class="clock">25:00</p>
         <div class="butts">
         <button onclick="stst()" id="stst"><i class="bi bi-play-fill"></i></button>
         <button onclick="pp()" id="pp" class="hidden"><i class="bi bi-pause-fill"></i></button>
+        <div id="overlay">
+            <h1>Set Custom Time</h1>
+            <label for="hours">Hours:</label>
+            <div class="custom-input">
+                <i class="bi bi-plus-circle-fill up"></i>
+                <input type="number" id="hours" name="hours" min="0" max="12"> 
+                <i class="bi bi-dash-circle-fill down"></i>
+            </div>
+            <label for="mins">Minutes:</label>
+            <div class="custom-input">
+                <i class="bi bi-plus-circle-fill up"></i>
+                <input type="number" id="mins" name="mins" min="0" max="59"> 
+                <i class="bi bi-dash-circle-fill down"></i>
+            </div>
+            <h1 class="set">Set</h1>
+        </div> 
         </div>
     </div>
     <hr>
