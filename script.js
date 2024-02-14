@@ -55,8 +55,8 @@ function customDuration() {
     let hourBox = document.getElementById("hours");
     let minsBox = document.getElementById("mins");
     setTime.addEventListener('click', () => {
-        let hrs = parseInt(hourBox.value);
-        let mins = parseInt(minsBox.value);
+        let hrs = parseInt(hourBox.value) || 0;
+        let mins = parseInt(minsBox.value) || 0;
         duration = (hrs*60*60) + (mins*60);
         clock = duration;
         document.querySelector(".clock").innerHTML = `${hrs}:${mins}:00`;
